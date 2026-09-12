@@ -1,22 +1,39 @@
 #!/bin/bash
+#Forge Server Setup
+
 #Madlib Copyright MysteryManYT-ttv 2026
-echo "Downloading Forge version 1.20.1 :) "
+
+GREEN=$'\033[1;32m'
+YELLOW=$'\033[1;33m'
+ENDCOLOR=$'\033[0m'
+RED=$'\033[31m'
 
 
-wget "https://github.com/MysteryManYT-ttv/Forge-1.20.1/archive/refs/heads/main.zip"
+echo  ${GREEN} Downloading Forge version 1.20.1 ${ENDCOLOR}
 
-mkdir ~/Downloads/main
-chmod +x ~/main.zip
-unzip ~/main.zip
-mv ~/main.zip ~/Downloads/main
-mv ~/Forge-1.20.1-main ~/Documents
-mv ~/Documents/Forge-1.20.1-main/./forge-1.20.1-47.4.10-installer-1-.jar ~/Documents
 
-rm -fr ~/Documents/Forge-1.20.1-main
-rm -fr ~/Downloads/main
+wget -O ~/Documents/forge-1.20.1-47.4.10-installer.jar \
+"maven.minecraftforge.net/net/minecraftforge/forge/1.20.1-47.4.10/forge-1.20.1-47.4.10-installer.jar"
+
+echo ${YELLOW} Checking fo.r Java updates, If missing- openjdk-21-jdk Download will start. ${ENDCOLOR}
 sudo apt install openjdk-21-jdk
 
-#chmod +x ~/Documents/./forge-1.20.1-47.4.10-instaler-1-.jar
+
+mkdir -p "$HOME/Documents/Minecraft-Server"
+cd "$HOME/Documents/Minecraft-Server"
+java -jar "$HOME/Documents/forge-1.20.1-47.4.10-installer.jar" --installServer
+
+echo ${RED} Install/Setup Finished ${ENDCOLOR}
+
+echo  ${GREEN} Launching Server ${ENDCOLOR}
+bash ~/Documents/Minecraft-Server/./run.sh
+nano ~/Documents/Minecraft-Server/eula.txt
+bash ~/Documents/Minecraft-Server/./run.sh
+
+
+
+
 #work in progress :)
+
 
 
