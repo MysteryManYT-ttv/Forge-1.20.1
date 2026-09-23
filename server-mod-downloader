@@ -33,4 +33,4 @@ mv ~/Downloads/TheOneWhoWatches-V1.4.4-1.20.1.jar ~/Documents/Minecraft-Server/m
 
 cd ~/Documents/Minecraft-Server/ 
 sudo bash ~/Documents/Minecraft-Server/run.sh
-
+#Still under development,expect issues!
