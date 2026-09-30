@@ -1,7 +1,7 @@
 #!/bin/bash
 #Forge Server Setup
 
-#Madlib Copyright MysteryManYT-ttv 2026
+#Madlib Copyright Aiden Rebec MysteryManYT-ttv 2026
 
 GREEN=$'\033[1;32m'
 YELLOW=$'\033[1;33m'
